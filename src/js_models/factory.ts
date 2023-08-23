@@ -3,7 +3,6 @@
  * 工厂内部代码过多
  * 新增类时，需要在工厂类中新增判断
  * */ 
-interface a {}
 
 // 抽象类
 class Animal {
@@ -42,4 +41,10 @@ let animalFactory = new AnimalFactory()
 const dog = animalFactory.createAnimal('dog')
 const cat = animalFactory.createAnimal('cat')
 
+
+
+
+export default {
+    AnimalFactory
+}
 

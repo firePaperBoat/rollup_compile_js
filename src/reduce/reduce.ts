@@ -4,29 +4,29 @@ interface Handler {
     (item, index?): any
 } 
 
-Array.prototype.reduceToMap = function(handler: Handler){
-    return this.reduce((target, current, index)=>{
-        target.push(handler.call(this, current, index))
-        return target
-    }, [])
-}
+// Array.prototype.reduceToMap = function(handler: Handler){
+//     return this.reduce((target, current, index)=>{
+//         target.push(handler.call(this, current, index))
+//         return target
+//     }, [])
+// }
 
-Array.prototype.reduceToFilter = function(handler: Handler){
-    return this.reduce((target, current, index)=>{
-        if(handler.call(this, current, index)){
-            target.push(current)
-        }
-        return target
-    }, [])
-}
+// Array.prototype.reduceToFilter = function(handler: Handler){
+//     return this.reduce((target, current, index)=>{
+//         if(handler.call(this, current, index)){
+//             target.push(current)
+//         }
+//         return target
+//     }, [])
+// }
 
-arr.reduceToMap(function(item, index){
-    if(item % 2 === 0) return item
-})
+// arr.reduceToMap(function(item, index){
+//     if(item % 2 === 0) return item
+// })
 
-arr.reduceToFilter((item, index)=>{
-    return item % 2 === 0
-})
+// arr.reduceToFilter((item, index)=>{
+//     return item % 2 === 0
+// })
 
 
 
@@ -103,19 +103,19 @@ function quick_Sort (arr){
 
 
 
-class SingleCase {
-    constructor(){}
-    static getInstance() {
-        if(!SingleCase.instance){
-            SingleCase.instance = new SingleCase()
-        }
-        return SingleCase.instance
-    }
-}
-const s1 = SingleCase.getInstance()
-const s2 = SingleCase.getInstance()
+// class SingleCase {
+//     constructor(){}
+//     static getInstance() {
+//         if(!SingleCase.instance){
+//             SingleCase.instance = new SingleCase()
+//         }
+//         return SingleCase.instance
+//     }
+// }
+// const s1 = SingleCase.getInstance()
+// const s2 = SingleCase.getInstance()
 // s1 和 s2 是同一个实例
-s1 === s2 // true
+// s1 === s2 // true
 
 //User类
 // class User {
@@ -149,64 +149,64 @@ s1 === s2 // true
 
 
 // 父类
-class User {
-    constructor(name = '', viewPage = []) {
-        if(new.target === User) {
-        throw new Error('抽象类不能实例化!');
-        }
-        this.name = name;
-        this.viewPage = viewPage;
-    }
-}
+// class User {
+//     constructor(name = '', viewPage = []) {
+//         if(new.target === User) {
+//         throw new Error('抽象类不能实例化!');
+//         }
+//         this.name = name;
+//         this.viewPage = viewPage;
+//     }
+// }
 // 子类
-class UserFactory extends User {
-    constructor(name, viewPage) {
-        super(name, viewPage)
-    }
-    // 创建方法
-    create(role) {
-        switch (role) {
-        case 'superAdmin': 
-            return new UserFactory( '超级管理员', ['首页', '应用数据', '权限管理'] );
-            break;
-        case 'admin':
-            return new User({ name: '管理员', viewPage: ['首页', '应用数据'] });
-            break;
-        case 'user':
-            return new UserFactory( '普通用户', ['首页'] );
-            break;
-        default:
-            throw new Error('参数错误, 可选参数:superAdmin、admin、user')
-        }
-    }
-}
-let userFactory = new UserFactory();
-let superAdmin = userFactory.create('superAdmin');
-let admin = userFactory.create('admin');
-let user = userFactory.create('user');
+// class UserFactory extends User {
+//     constructor(name, viewPage) {
+//         super(name, viewPage)
+//     }
+//     // 创建方法
+//     create(role) {
+//         switch (role) {
+//         case 'superAdmin': 
+//             return new UserFactory( '超级管理员', ['首页', '应用数据', '权限管理'] );
+//             break;
+//         case 'admin':
+//             return new User({ name: '管理员', viewPage: ['首页', '应用数据'] });
+//             break;
+//         case 'user':
+//             return new UserFactory( '普通用户', ['首页'] );
+//             break;
+//         default:
+//             throw new Error('参数错误, 可选参数:superAdmin、admin、user')
+//         }
+//     }
+// }
+// let userFactory = new UserFactory();
+// let superAdmin = userFactory.create('superAdmin');
+// let admin = userFactory.create('admin');
+// let user = userFactory.create('user');
 
 
-function getAbstractUserFactory(type) {
-    switch (type) {
-      case 'wechat':
-        return UserOfWechat;
-        break;
-      case 'qq':
-        return UserOfQq;
-        break;
-      case 'weibo':
-        return UserOfWeibo;
-        break;
-      default:
-        throw new Error('参数错误, 可选参数:wechat、qq、weibo')
-    }
-}
-let WechatUserClass = getAbstractUserFactory('wechat');
-let QqUserClass = getAbstractUserFactory('qq');
-let WeiboUserClass = getAbstractUserFactory('weibo');
-let wechatUser = new WechatUserClass('微信张三');
-let qqUser = new QqUserClass('QQ张三');
-let weiboUser = new WeiboUserClass('微博张三');
+// function getAbstractUserFactory(type) {
+//     switch (type) {
+//       case 'wechat':
+//         return UserOfWechat;
+//         break;
+//       case 'qq':
+//         return UserOfQq;
+//         break;
+//       case 'weibo':
+//         return UserOfWeibo;
+//         break;
+//       default:
+//         throw new Error('参数错误, 可选参数:wechat、qq、weibo')
+//     }
+// }
+// let WechatUserClass = getAbstractUserFactory('wechat');
+// let QqUserClass = getAbstractUserFactory('qq');
+// let WeiboUserClass = getAbstractUserFactory('weibo');
+// let wechatUser = new WechatUserClass('微信张三');
+// let qqUser = new QqUserClass('QQ张三');
+// let weiboUser = new WeiboUserClass('微博张三');
 
 
 
@@ -225,12 +225,14 @@ class Factory {
 }
 /* 产品类1 */
 class Product1 {
+    type
     constructor() { this.type = 'Product1' }
     
     operate() { console.log(this.type) }
 }
 /* 产品类2 */
 class Product2 {
+    type
     constructor() { this.type = 'Product2' }
     
     operate() { console.log(this.type) }
