@@ -966,6 +966,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@rollup/plugin-html@^1.0.2":
+  "integrity" "sha512-jGqb45BPj5kwvb/bq1jIzUDLebsm1xmfnY1rwgTIZyjpsMyMKLuQO27n4z5qv6kZmxqxh+CBRD7d1rjAu85Uzg=="
+  "resolved" "https://registry.npmmirror.com/@rollup/plugin-html/-/plugin-html-1.0.2.tgz"
+  "version" "1.0.2"
+
 "@rollup/plugin-typescript@^8.5.0":
   "integrity" "sha512-wMv1/scv0m/rXx21wD2IsBbJFba8wGF3ErJIr6IKRfRj49S85Lszbxb4DCo8iILpluTjk2GAAu9CoZt4G3ppgQ=="
   "resolved" "https://registry.npmmirror.com/@rollup/plugin-typescript/-/plugin-typescript-8.5.0.tgz"
@@ -1318,7 +1323,7 @@
   dependencies:
     "estree-walker" "^0.6.1"
 
-"rollup@^1.20.0||^2.0.0", "rollup@^2.0.0", "rollup@^2.14.0", "rollup@^2.79.1", "rollup@>=0.60.0 <3":
+"rollup@^1.20.0||^2.0.0", "rollup@^1.20.0||^2.0.0||^3.0.0", "rollup@^2.0.0", "rollup@^2.14.0", "rollup@^2.79.1", "rollup@>=0.60.0 <3":
   "integrity" "sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw=="
   "resolved" "https://registry.npmmirror.com/rollup/-/rollup-2.79.1.tgz"
   "version" "2.79.1"
