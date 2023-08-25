@@ -6,26 +6,26 @@
 
 // 抽象类
 class Animal {
-    speak () :void {
+    speak ():string {
         throw new Error('this method must be implemented')
     }
 }
 
 // 具体类
 class Dog extends Animal {
-    speak() : string {
+    speak():string {
         return 'fool'
     }
 }
 
 class Cat extends Animal {
-    speak(): String {
+    speak():string {
         return 'Meow'
     }
 }
 
 class AnimalFactory {
-    createAnimal (animalType: string) {
+    createAnimal (animalType) {
         switch (animalType) {
             case 'dog': 
             return new Dog() ;
@@ -37,14 +37,11 @@ class AnimalFactory {
     }
 }
 
-let animalFactory = new AnimalFactory()
-const dog = animalFactory.createAnimal('dog')
-const cat = animalFactory.createAnimal('cat')
+// let animalFactory = new AnimalFactory()
+// const dog = animalFactory.createAnimal('dog')
+// const cat = animalFactory.createAnimal('cat')
 
-
-
-
-export default {
+export {
     AnimalFactory
 }
 

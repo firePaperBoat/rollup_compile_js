@@ -11,7 +11,7 @@ export default {
     output:{
       file:'./dist/bundle.js',//打包后的存放文件
       format:'cjs',//输出格式 amd es6 iife umd cjs
-      name:'bundleName',//如果iife,umd需要指定一个全局变量
+      name:'bundleName',//如果iife、umd需要指定一个全局变量
       sourcemap: true // true-隐射每个文件
     },
     // plugin 插件

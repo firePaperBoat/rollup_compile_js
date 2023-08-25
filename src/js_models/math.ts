@@ -1,4 +1,4 @@
-class MathFloat {
+class _MathFloat {
     constructor(){}
     float_len = 0
     i_isNan(i){
@@ -21,7 +21,8 @@ class MathFloat {
         return mathArr
     }
     add(){
-        let mathArr = this.whole_number([...arguments])
+        let args = arguments
+        const mathArr = this.whole_number([...args])
         let result = mathArr.reduce((pre,next)=>{
             return pre + Number(next) * Math.pow(10,this.float_len)
         })
@@ -29,7 +30,8 @@ class MathFloat {
     }
 
     deduct(){
-        let mathArr = this.whole_number([...arguments])
+        let args = arguments
+        const mathArr = this.whole_number([...args])
         let result = mathArr.reduce((pre,next)=>{
             console.log(pre,next)
             return pre - Number(next) * Math.pow(10,this.float_len)
@@ -144,6 +146,7 @@ subject.notifyObservers();
 
 // class类实现观察者模式
 class Subject { 
+    observers
     constructor() { 
         this.observers = []; 
     }
@@ -163,6 +166,8 @@ class Subject {
     } 
 }
 class Observer { 
+    state
+    initialState
     constructor(state = 1) { 
         this.state = state; 
         this.initialState = state; 
@@ -197,7 +202,6 @@ console.log(stream$,'090909090')
 
 stream$.fire({ type: 'INCREMENT' });
 
-console.log(obs1.state); // 2 
-console.log(obs2.state); // 43
+
 
 
